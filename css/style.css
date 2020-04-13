@@ -11,3 +11,17 @@ section{
 .list ul{
     width: 600px;
 }
+
+.medicine-details-list{
+    list-style: none;
+}
+.medicine-details-list span{
+    font-weight: bold;
+}
+.medicine-details-list li{
+    margin-top: 10px;
+}
+/* image */
+#image img{
+    width: 200px;
+}

@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-around mt-3">
             <h2>Inventory</h2>   
             <div>
-              <button type="button" id="add-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" id="add-btn" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
                 Add
               </button>
             </div>
@@ -27,8 +27,8 @@
     <section class="mt-5 d-flex justify-content-center">
         <div class="list">
             <h4>List items</h4>
-            <ul class="list-group mt-3">
-                <li class="list-group-item">Items 1</li>
+            <ul class="list-group mt-3" id="medicine-list">
+                <li class="list-group-item" data-toggle="modal" data-target="#list-modal">Items 1</li>
                 <li class="list-group-item">Items 2</li>
                 <li class="list-group-item">Items 3</li>
                 <li class="list-group-item">Items 4</li>
@@ -36,14 +36,42 @@
             </ul>
         </div>
     </section>
-
-        <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Preview modal -->
+    <div class="modal fade" id="list-modal" tabindex="-1" role="dialog" aria-labelledby="input-modal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add items in inventory</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title text-center">Medicine Details</h5>
+              <button type="button" id="back-btn" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="text-center mt-3 mr-3" id="image">
+              <img src="https://myrepublica.nagariknetwork.com/uploads/media/2018/June/medicines.jpg" alt="medicine Image">
+            </div>
+            <div class="modal-body">
+                  <div class="medicine-details text-center">
+                   <ul class="medicine-details-list">
+                     <li><span>Name: </span> Medicine name</li>
+                     <li><span>Type: </span> Medicine types</li>
+                     <li><span>Quantity: </span> Medicine quantity</li>
+                   </ul>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="add-item" class="btn btn-danger">Update</button>
+              <button type="button" id="add-item" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+      </div>
+    </div> 
+    <!-- add Modal -->
+    <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="input-modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-heading">Add items in inventory</h5>
+              <button type="button" id="back-btn" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -74,7 +102,6 @@
                   </form>
             </div>
             <div class="modal-footer">
-              <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" id="add-item" class="btn btn-primary">Add items</button>
             </div>
         </div>
