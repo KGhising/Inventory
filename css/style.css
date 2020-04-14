@@ -11,6 +11,9 @@ section{
 .list ul{
     width: 600px;
 }
+.list ul li{
+    cursor: pointer;
+}
 
 .medicine-details-list{
     list-style: none;
