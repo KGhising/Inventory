@@ -3,6 +3,16 @@
 
 //For data
 
+//constructor for the items 
+
+const Medicine = function(name,type,image,quantity){
+
+    this.name = name;
+    this.type = type;
+    this.image = image;
+    this.quantity = quantity;
+}
+
 
 
 
