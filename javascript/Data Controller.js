@@ -4,8 +4,9 @@
 //For data
 
 //constructor for the items 
+class Datacontroller{
 
-const Medicine = function(name,type,image,quantity){
+ Medicine = function(name,type,image,quantity){
 
     this.name = name;
     this.type = type;
@@ -13,6 +14,7 @@ const Medicine = function(name,type,image,quantity){
     this.quantity = quantity;
 }
 
+}
 
 
 
