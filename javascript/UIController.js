@@ -14,11 +14,32 @@ class Medicine{
     
     }
     
+    document.getElementById("add-item").addEventListener('click',function(e){
+
+        const name =  document.getElementById('medicine-name').value;
+        const medicinetype = document.getElementById('medicine-type').value;
+        const image = document.getElementById('medicine-image').value;
+        const quantity = document.getElementById('medicine-quantity').value;
+        
+            //instatiating medicine class
+        const medicine = new Medicine(name,medicinetype,image,quantity);
+        Store.addMedicine(medicine);
+      
+        
+        e.preventDefault();
+        
+   
+    
+        });
+    
 
 
 
+class UIcontroller{
 
-class UIcontroller{}
+    
+
+}
 
 
 
@@ -41,21 +62,21 @@ class UIcontroller{}
 // }
 
 
-document.getElementById("add-item").addEventListener('click',function(e){
-    const name =  document.getElementById('medicine-name').value;
-    const medicinetype = document.getElementById('medicine-type').value;
-    const image = document.getElementById('medicine-image').value;
-    const quantity = document.getElementById('medicine-quantity').value;
+// document.getElementById("add-item").addEventListener('click',function(e){
+//     const name =  document.getElementById('medicine-name').value;
+//     const medicinetype = document.getElementById('medicine-type').value;
+//     const image = document.getElementById('medicine-image').value;
+//     const quantity = document.getElementById('medicine-quantity').value;
     
-        e.preventDefault();
-        const medicine = new Medicine(name,medicinetype,image,quantity);
+//         e.preventDefault();
+//         const medicine = new Medicine(name,medicinetype,image,quantity);
     
-    console.log(medicine);
-    e.preventDefault();
+//     console.log(medicine);
+//     e.preventDefault();
     
 
 
-    });
+//     });
 
 
 //inatantiating medicine
