@@ -23,7 +23,9 @@ class Medicine{
         
             //instatiating medicine class
         const medicine = new Medicine(name,medicinetype,image,quantity);
+        
         Store.addMedicine(medicine);
+
       
         
         e.preventDefault();

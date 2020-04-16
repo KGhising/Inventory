@@ -21,7 +21,7 @@ class Store{
     static addMedicine(medicine){
         const medicines = Store.getMedicine();  
         medicines.push(medicine);
-        localStorage.setItem('items', JSON.stringify(medicines));
+        localStorage.setItem('medicines', JSON.stringify(medicines));
     }
     // static removeItemsFromStorage(id){
     //     const medicines = Store.getMedicine();
