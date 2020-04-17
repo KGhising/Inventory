@@ -2,7 +2,7 @@
 
 //Define the UI variable:
 // constructor for main event button
-class UI{
+  class UI{
     construtor(){
         this.addItems = document.querySelector('#add-item');
         this.itemDetails = document.querySelector('.medicine-details-list');
@@ -13,7 +13,7 @@ class UI{
 }
 
 // Get posts on DOM load
-document.addEventListener('DOMContentLoaded', displayList);
+     document.addEventListener('DOMContentLoaded', displayList);
 
     // // display list
     document.querySelector('#add-item').addEventListener('click', displayList);
@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', displayList);
         });
     }
 
+
+    //some refrence code
 
     // // Event Listner for Medicine details
     // document.querySelector('.list-group-item').addEventListener('click', function(){
