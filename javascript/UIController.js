@@ -2,6 +2,56 @@
 
 //Define the UI variable:
 
+<<<<<<< HEAD
+=======
+class Medicine{
+
+    constructor(name, medicinetype, image, quantity){
+    
+        this.name = name;
+        this.medicinetype = medicinetype;
+        this.image = image;
+        this.quantity = quantity;
+    }
+    
+    }
+    
+document.getElementById("add-item").addEventListener('click',function(e){
+
+    const name =  document.getElementById('medicine-name').value;
+    const medicinetype = document.getElementById('medicine-type').value;
+    const image = document.getElementById('medicine-image').value;
+    const quantity = document.getElementById('medicine-quantity').value;
+    
+    //instatiating medicine class
+    const medicine = new Medicine(name,medicinetype,image,quantity);
+
+    //Add medicine name in list
+    const list = document.getElementById('medicine-list');
+    
+    //Create new element
+    const li = document.createElement('li');
+
+    //Add class
+    li.className = 'list-group-item';
+
+    //Create text node and append to li
+    li.appendChild(document.createTextNode(name));
+
+    //Append the li to ul
+    list.appendChild(li);
+        
+    
+    Store.addMedicine(medicine);
+    
+    
+    e.preventDefault();
+    
+
+
+    });
+    
+>>>>>>> 060c65b1f71696ec5ee59aa2ba4e50d6f0e6d993
 
 
 //All code manipulating UI goes here
