@@ -23,12 +23,7 @@ class Medicine{
         
         //instatiating medicine class
         const medicine = new Medicine(name,medicinetype,image,quantity);
-<<<<<<< HEAD
-        
-        Store.addMedicine(medicine);
 
-      
-=======
         //Add medicine name in list
         const list = document.getElementById('medicine-list');
         console.log(list);
@@ -46,13 +41,10 @@ class Medicine{
 
         //Append the li to ul
         list.appendChild(li);
-
-
             
         
         Store.addMedicine(medicine);
         
->>>>>>> data_controller
         
         e.preventDefault();
         
