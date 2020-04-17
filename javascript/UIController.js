@@ -21,12 +21,38 @@ class Medicine{
         const image = document.getElementById('medicine-image').value;
         const quantity = document.getElementById('medicine-quantity').value;
         
-            //instatiating medicine class
+        //instatiating medicine class
         const medicine = new Medicine(name,medicinetype,image,quantity);
+<<<<<<< HEAD
         
         Store.addMedicine(medicine);
 
       
+=======
+        //Add medicine name in list
+        const list = document.getElementById('medicine-list');
+        console.log(list);
+        
+        // const medicineName = `
+        //     <li class="list-group-item">${medicine.name}</li>
+        // `;
+        const li = document.createElement('li');
+
+        //Add class
+        li.className = 'list-group-item';
+
+        //Create text node and append to li
+        li.appendChild(document.createTextNode(name));
+
+        //Append the li to ul
+        list.appendChild(li);
+
+
+            
+        
+        Store.addMedicine(medicine);
+        
+>>>>>>> data_controller
         
         e.preventDefault();
         
@@ -39,9 +65,9 @@ class Medicine{
 
 class UIcontroller{
 
-    
 
 }
+
 
 
 
