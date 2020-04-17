@@ -13,7 +13,7 @@ Flow of the program
 > when you run index.html then initially you will observe the following event happening in your screen
 
 
-![screenshot](./imageScreenshot/Initiallook.png)
+![screenshot](./imageScreenshots/Initiallook.png)
 
 The list Item will later on display the name list of the medicines.
 
@@ -21,12 +21,15 @@ The list Item will later on display the name list of the medicines.
 
 looks something like this:
 
-![screenshot](./imageScreenshot/popupcard.PNG)
+![screenshot](./imageScreenshots/popupcard.PNG)
+
+
 
 > When you input the the information the information gets updated in the localstorage
 
-![screenshot](./imageScreenshot/localstoragedata.png)
+![screenshot](./imageScreenshots/localstorragedata.png)
+
 
 > The name of the medicine will also get displayed in the main display screen
 
-![screenshot](./imageScreenshot/display.png)
+![screenshot](./imageScreenshots/display.png)
