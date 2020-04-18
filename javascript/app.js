@@ -1,18 +1,13 @@
 //All instantiation and connection code goes here
-class Medicine{
-    constructor(name, medicinetype, image, quantity){
-        this.name = name;
-        this.medicinetype = medicinetype;
-        this.image = image;
-        this.quantity = quantity;
-    }
-}
+
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
-document.getElementById("delete-item").addEventListener('click', deleteItemFromInventory);
+// document.getElementById("delete-item").addEventListener('click', deleteItemFromInventory);
 document.getElementById("update-item").addEventListener('click', updateItemInInventory);
-// document.getElementById("add-item").addEventListener('click', addItemInInventor);
+document.getElementById('medicine-list').addEventListener('click', displayDetails);
 
+// Get posts on DOM load
+document.addEventListener('DOMContentLoaded', displayList);
 
 // function to add item in storage
 function addItemInInventory(e){
@@ -25,26 +20,24 @@ function addItemInInventory(e){
     const medicine = new Medicine(name,medicinetype,image,quantity);
     Store.addMedicine(medicine);
     
+    // passing medicine
+    displayList();
     // Prevent default
     e.preventDefault();
 }
-// function to delete items from storage
-function deleteItemFromInventory(){
-    if(e.target.parentElement.classList.contains('delete')) {
-        const id = e.target.parentElement.dataset.id;
-        if(confirm('Are you sure?')) {
-          http.delete(`http://localhost:3000/posts/${id}`)
-            .then(data => {
-              ui.showAlert('Post removed', 'alert alert-success');
-              getPosts();
-            })
-            .catch(err => console.log(err));
-        }
-      }
-      e.preventDefault();
 
-
+// Function to display list items
+function displayList(){
+  document.getElementById('medicine-list').innerHTML = '';
+  UI.displayItemName();
 }
+
+// Function to display list items
+function displayDetails(e){
+  UI.displayItemsDetails(e);
+}
+
+// function to delete items from storage
 
 // function to update items in storage
 function updateItemInInventory(){
