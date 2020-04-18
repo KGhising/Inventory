@@ -1,4 +1,12 @@
 //All instantiation and connection code goes here
+class Medicine {
+  constructor(name, medicinetype, image, quantity) {
+    this.name = name;
+    this.medicinetype = medicinetype;
+    this.image = image;
+    this.quantity = quantity;
+  }
+}
 
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
