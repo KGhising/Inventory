@@ -33,3 +33,22 @@ looks something like this:
 > The name of the medicine will also get displayed in the main display screen
 
 ![screenshot](./imageScreenshots/display.png)
+
+
+> When you click any item in the list you obtain the full details of the medicine
+
+![screenshot](./imageScreenshots/medicinedetails.png)
+
+
+> Now when you want to update the file then you click update.
+
+![screenshot](./imageScreenshots/updatedisplay.png)
+
+> After updating the file you will se the updated result 
+
+![screenshot](./imageScreenshots/updatedResult.png)
+
+> The deleted button removes the content .
+
+![Screenshots](./imageScreenshot/screenafterDeletion.png)
+
