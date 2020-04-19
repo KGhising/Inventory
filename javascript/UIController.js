@@ -64,7 +64,6 @@ class UI{
                 `;
                 UI.fillMedicine(item);
                 UI.idName(item);
-                console.log(item);
             }
         }); 
         // e.preventDefault();
@@ -86,9 +85,7 @@ class UI{
     }
 
     static idName(id){
-        const ids = id.ID;
-        // console.log(ids);
-        return ids;
+        return id.ID;
     }
     
 }

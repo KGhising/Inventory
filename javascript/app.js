@@ -8,7 +8,6 @@ class Medicine {
     this.quantity = quantity;
   }
 }
-
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
 // document.getElementById("delete-item").addEventListener('click', deleteItemFromInventory);
@@ -71,8 +70,6 @@ function fillItemInform(){
 
 // Update items
 function updateItemInInventory(){
-  const ID = UI.idName();
-  console.log(ID);
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
   const image = document.getElementById('medicine-update-image').value;
