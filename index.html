@@ -53,7 +53,7 @@
                   </div>
             </div>
             <div class="modal-footer">
-              <button type="button" id="update-item" class="btn btn-warning" data-toggle="modal" data-target="#update-modal" >Update</button>
+              <button type="button" id="update-item" class="btn btn-warning" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#update-modal" >Update</button>
               <button type="button" id="delete-item" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Delete</button>
             </div>
         </div>
@@ -113,6 +113,7 @@
             </div>
             <div class="modal-body">
                 <form>
+                  <input type="hidden" id="medicine-update-id">
                     <div class="form-group">
                       <label for="medicine-update-name">Medicine name</label>
                       <input type="text" class="form-control" id="medicine-update-name" placeholder="Medicine name">

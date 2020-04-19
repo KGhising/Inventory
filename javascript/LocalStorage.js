@@ -14,9 +14,7 @@ class Store{
     static displayMedicineName(){
         const medicines = Store.getMedicine();
         return medicines;
-        // medicines.forEach(function(medicine){
-        //     return medicine;
-        // }); 
+ 
     }
 
     static addMedicine(medicine){
@@ -29,20 +27,21 @@ class Store{
         let medicines = Store.getMedicine('medicines');
 
         medicines.forEach(function(med, index){
-          if(medicine.ID === med.ID){
+          if(med.ID === medicine.ID){
             medicines.splice(index, 1, medicine);
           }
         });
         localStorage.setItem('medicines', JSON.stringify(medicines));
       }
-    // static removeItemsFromStorage(id){
-    //     const medicines = Store.getMedicine();
-
-    //     items.forEach(function(medicine, index){
-    //         if(medicine.id === id){
-    //             medicine.splice(index, 1)
-    //         }
-    //     });
-    //     localStorage.setItem('medicines', JSON.stringify(medicines));
-    // }
+    static removeItemsFromStorage(id){
+        const medicines = Store.getMedicine();
+        // console.log(medicines);
+        medicines.forEach(function(medicine, index){
+            if(medicine.ID === id){
+                medicines.splice(index, 1)
+                // localStorage.removeItem(index);
+            }
+        });
+        localStorage.setItem('medicines', JSON.stringify(medicines));
+    }
 } 
