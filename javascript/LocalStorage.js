@@ -1,22 +1,6 @@
 //All code manipulating LocalStorage goes here
 
 class Store{
-    
-
-    static get(key) {
-        let values = localStorage.getItem(key);        
-        if (values === null) {
-            values = [];
-        } else {
-            values = JSON.parse(values);
-        }
-        return values;
-    }
-
-    
-    static add(key, values){
-        localStorage.setItem(key, values);
-    }
 
     static getMedicine(){
         let medicines;
@@ -34,11 +18,23 @@ class Store{
         //     return medicine;
         // }); 
     }
+
     static addMedicine(medicine){
         const medicines = Store.getMedicine();  
         medicines.push(medicine);
         localStorage.setItem('medicines', JSON.stringify(medicines));
     }
+
+    static updateItemStorage(medicine){
+        let medicines = Store.getMedicine('medicines');
+
+        medicines.forEach(function(med, index){
+          if(medicine.ID === med.ID){
+            medicines.splice(index, 1, medicine);
+          }
+        });
+        localStorage.setItem('medicines', JSON.stringify(medicines));
+      }
     // static removeItemsFromStorage(id){
     //     const medicines = Store.getMedicine();
 

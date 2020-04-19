@@ -18,12 +18,11 @@
 //         img.src=imgUrl;
 //     });
 // }
-
 class UI{
     static displayItemName() {
 
         const medicineName = Store.displayMedicineName();
-        console.log(medicineName);
+        // console.log(medicineName);
 
         medicineName.forEach(element => {
             //Add medicine name in list
@@ -63,9 +62,33 @@ class UI{
                 <li><span>Type: </span> ${type}</li>
                 <li><span>Quantity: </span> ${quantity}</li>
                 `;
+                UI.fillMedicine(item);
+                UI.idName(item);
+                console.log(item);
             }
         }); 
         // e.preventDefault();
     }
+    // clear fields
+    static clearFields(){
+        document.getElementById('medicine-name').value = '';
+        document.getElementById('medicine-type').value = '';
+        document.getElementById('medicine-image').value = '';
+        document.getElementById('medicine-quantity').value = '';
+    }
 
+    static fillMedicine(item) {
+        document.getElementById('medicine-update-name').value = `${item.name}`;
+        document.getElementById('medicine-update-type').value = `${item.medicinetype}`;
+        // document.getElementById('medicine-update-image').value = `${item.name}`;
+        document.getElementById('medicine-update-quantity').value = `${item.quantity}`;
+        // return item;
+    }
+
+    static idName(id){
+        const ids = id.ID;
+        // console.log(ids);
+        return ids;
+    }
+    
 }
