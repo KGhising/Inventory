@@ -1,4 +1,7 @@
-//All instantiation and connection code goes here
+
+
+
+//Medicine class defines the properties that we will be using throughout the project
 class Medicine {
   constructor(ID, name, medicinetype, image, quantity) {
     this.ID = ID;
@@ -11,8 +14,6 @@ class Medicine {
 
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
-// document.getElementById("delete-item").addEventListener('click', deleteItemFromInventory);
-// document.getElementById("update-item").addEventListener('click', fillItemInform);
 document.getElementById("updated-item").addEventListener('click', updateItemInInventory);
 document.getElementById('medicine-list').addEventListener('click', displayDetails);
 document.getElementById("delete-item").addEventListener('click', deleteItem);
@@ -42,7 +43,7 @@ function addItemInInventory(e){
       //instatiating medicine class
       const medicine = new Medicine(ID, name,medicinetype,image,quantity);
       Store.addMedicine(medicine);
-      
+     
       // passing medicine
       displayList();
 
@@ -63,17 +64,10 @@ function displayDetails(e){
   UI.displayItemsDetails(e);
 }
 
-// function to delete items from storage
-
-// function to fill items in form
-// function fillItemInform(){
-//   // UI.fillMedicine();
-// }
 
 // Update items
 function updateItemInInventory(){
-  // const ID = UI.idName();
-  // console.log(ID);
+  
   const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
@@ -81,8 +75,10 @@ function updateItemInInventory(){
   const quantity = document.getElementById('medicine-update-quantity').value;
   const medicine = new Medicine(Number(ID), name, medicinetype, image, quantity);
   Store.updateItemStorage(medicine);
-}
 
+  displayList();
+}
+//delete items.
 function deleteItem (e) {
 
   e.preventDefault();
