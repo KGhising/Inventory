@@ -1,4 +1,4 @@
-//All code manipulating UI goes here
+
 
 //Define the UI variable:
 
@@ -18,14 +18,17 @@
 //         img.src=imgUrl;
 //     });
 // }
+
+
 class UI{
+
+    //displayItemName function basically creates a list and display 
+    
     static displayItemName() {
-
-        const medicineName = Store.displayMedicineName();
-        // console.log(medicineName);
-
+        
+       const medicineName = Store.displayMedicineName();
         medicineName.forEach(element => {
-            // console.log(element);
+            
             //Add medicine name in list
             const list = document.getElementById('medicine-list');
             // console.log(list);
@@ -45,11 +48,11 @@ class UI{
         
     }
 
+     //This function displays the medicine details
+
     static displayItemsDetails(e) {
-        // console.log(e.target.firstChild);
+
         const medicineName = e.target.firstChild.nodeValue;
-        // console.dir(e.target);
-        // console.log(medicineName);
         const items = Store.displayMedicineName();
    
         items.forEach((item)=>{
@@ -70,6 +73,7 @@ class UI{
         }); 
         e.preventDefault();
     }
+
     // clear fields
     static clearFields(){
         document.getElementById('medicine-name').value = '';
@@ -78,19 +82,15 @@ class UI{
         document.getElementById('medicine-quantity').value = '';
     }
 
+   //This function fills current item in the form to be updated.
     static fillMedicine(item) {
         document.getElementById('medicine-update-id').value = `${item.ID}`;
         document.getElementById('medicine-update-name').value = `${item.name}`;
         document.getElementById('medicine-update-type').value = `${item.medicinetype}`;
 
         document.getElementById('medicine-update-quantity').value = `${item.quantity}`;
-        // return item;
+        
     }
 
-    // static idName(id){
-    //     // const ids = id.ID;
-    //     // console.log(ids);
-    //     return id;
-    // }
     
 }
