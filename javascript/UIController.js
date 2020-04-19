@@ -25,6 +25,7 @@ class UI{
         // console.log(medicineName);
 
         medicineName.forEach(element => {
+            // console.log(element);
             //Add medicine name in list
             const list = document.getElementById('medicine-list');
             // console.log(list);
@@ -47,6 +48,7 @@ class UI{
     static displayItemsDetails(e) {
         // console.log(e.target.firstChild);
         const medicineName = e.target.firstChild.nodeValue;
+        // console.dir(e.target);
         // console.log(medicineName);
         const items = Store.displayMedicineName();
    
@@ -62,12 +64,11 @@ class UI{
                 <li><span>Type: </span> ${type}</li>
                 <li><span>Quantity: </span> ${quantity}</li>
                 `;
+                document.getElementById('delete-item').setAttribute('data-id', item.ID)
                 UI.fillMedicine(item);
-                UI.idName(item);
-                console.log(item);
             }
         }); 
-        // e.preventDefault();
+        e.preventDefault();
     }
     // clear fields
     static clearFields(){
@@ -78,17 +79,18 @@ class UI{
     }
 
     static fillMedicine(item) {
+        document.getElementById('medicine-update-id').value = `${item.ID}`;
         document.getElementById('medicine-update-name').value = `${item.name}`;
         document.getElementById('medicine-update-type').value = `${item.medicinetype}`;
-        // document.getElementById('medicine-update-image').value = `${item.name}`;
+
         document.getElementById('medicine-update-quantity').value = `${item.quantity}`;
         // return item;
     }
 
-    static idName(id){
-        const ids = id.ID;
-        // console.log(ids);
-        return ids;
-    }
+    // static idName(id){
+    //     // const ids = id.ID;
+    //     // console.log(ids);
+    //     return id;
+    // }
     
 }

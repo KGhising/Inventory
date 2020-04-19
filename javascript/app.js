@@ -12,9 +12,10 @@ class Medicine {
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
 // document.getElementById("delete-item").addEventListener('click', deleteItemFromInventory);
-document.getElementById("update-item").addEventListener('click', fillItemInform);
+// document.getElementById("update-item").addEventListener('click', fillItemInform);
 document.getElementById("updated-item").addEventListener('click', updateItemInInventory);
 document.getElementById('medicine-list').addEventListener('click', displayDetails);
+document.getElementById("delete-item").addEventListener('click', deleteItem);
 
 // Get posts on DOM load
 document.addEventListener('DOMContentLoaded', displayList);
@@ -65,23 +66,28 @@ function displayDetails(e){
 // function to delete items from storage
 
 // function to fill items in form
-function fillItemInform(){
-  UI.fillMedicine();
-}
+// function fillItemInform(){
+//   // UI.fillMedicine();
+// }
 
 // Update items
 function updateItemInInventory(){
-  const ID = UI.idName();
-  console.log(ID);
+  // const ID = UI.idName();
+  // console.log(ID);
+  const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
   const image = document.getElementById('medicine-update-image').value;
   const quantity = document.getElementById('medicine-update-quantity').value;
-  const medicine = new Medicine(ID, name, medicinetype, image, quantity);
-  console.log(medicine);
+  const medicine = new Medicine(Number(ID), name, medicinetype, image, quantity);
   Store.updateItemStorage(medicine);
+}
 
-  // refresh list
+function deleteItem (e) {
+
+  e.preventDefault();
+  const id = e.target.dataset.id;
+  Store.removeItemsFromStorage(Number(id));
+
   displayList();
-
 }
