@@ -1,6 +1,3 @@
-
-
-
 //Medicine class defines the properties that we will be using throughout the project
 class Medicine {
   constructor(ID, name, medicinetype, image, quantity) {
@@ -11,6 +8,7 @@ class Medicine {
     this.quantity = quantity;
   }
 }
+
 // Add event listerner
 document.getElementById("add-item").addEventListener('click', addItemInInventory);
 document.getElementById("updated-item").addEventListener('click', updateItemInInventory);
@@ -21,7 +19,7 @@ document.getElementById("delete-item").addEventListener('click', deleteItem);
 document.addEventListener('DOMContentLoaded', displayList);
 
 // function to add item in storage
-function addItemInInventory(e){
+function addItemInInventory(e) {
     const name =  document.getElementById('medicine-name').value;
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
@@ -45,7 +43,7 @@ function addItemInInventory(e){
      
       // passing medicine
       displayList();
-
+      // clear input fields
       UI.clearFields();
     }
     // Prevent default
@@ -53,26 +51,18 @@ function addItemInInventory(e){
 }
 
 // Function to display list items
-function displayList(){
+function displayList() {
   document.getElementById('medicine-list').innerHTML = '';
   UI.displayItemName();
 }
 
 // Function to display list items
-function displayDetails(e){
+function displayDetails(e) {
   UI.displayItemsDetails(e);
 }
 
-<<<<<<< HEAD
 // Update items
-function updateItemInInventory(){
-
-=======
-
-// Update items
-function updateItemInInventory(){
-  
->>>>>>> af2ebf83f101f3ae476bc60b486a669007303e06
+function updateItemInInventory() {
   const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
@@ -80,21 +70,17 @@ function updateItemInInventory(){
   const quantity = document.getElementById('medicine-update-quantity').value;
   const medicine = new Medicine(Number(ID), name, medicinetype, image, quantity);
   Store.updateItemStorage(medicine);
-<<<<<<< HEAD
-
+  
+  // load displaylist
   displayList();
 }
-=======
->>>>>>> af2ebf83f101f3ae476bc60b486a669007303e06
 
-  displayList();
-}
-//delete items.
+// delete items.
 function deleteItem (e) {
-
   e.preventDefault();
   const id = e.target.dataset.id;
   Store.removeItemsFromStorage(Number(id));
 
+  // load displaylist
   displayList();
 }
