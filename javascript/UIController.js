@@ -67,6 +67,7 @@ class UI{
                 <li><span>Type: </span> ${type}</li>
                 <li><span>Quantity: </span> ${quantity}</li>
                 `;
+                document.getElementById('medicine-image-display').src = item.image_base64;
                 document.getElementById('delete-item').setAttribute('data-id', item.ID)
                 UI.fillMedicine(item);
             }
@@ -80,6 +81,7 @@ class UI{
         document.getElementById('medicine-type').value = '';
         document.getElementById('medicine-image').value = '';
         document.getElementById('medicine-quantity').value = '';
+        document.getElementById('medicine-image-base64').src='';
     }
 
    //This function fills current item in the form to be updated.
@@ -87,10 +89,7 @@ class UI{
         document.getElementById('medicine-update-id').value = `${item.ID}`;
         document.getElementById('medicine-update-name').value = `${item.name}`;
         document.getElementById('medicine-update-type').value = `${item.medicinetype}`;
-
-        document.getElementById('medicine-update-quantity').value = `${item.quantity}`;
-        
+        document.getElementById('medicine-update-quantity').value = `${item.quantity}`;      
     }
-
     
 }

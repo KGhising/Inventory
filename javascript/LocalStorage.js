@@ -1,5 +1,4 @@
 
-
 class Store {
 
 //This function gets medicine array stored in getMedicine

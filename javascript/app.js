@@ -3,11 +3,12 @@
 
 //Medicine class defines the properties that we will be using throughout the project
 class Medicine {
-  constructor(ID, name, medicinetype, image, quantity) {
+  constructor(ID, name, medicinetype, image, image_base64, quantity) {
     this.ID = ID;
     this.name = name;
     this.medicinetype = medicinetype;
     this.image = image;
+    this.image_base64 = image_base64;
     this.quantity = quantity;
   }
 }
@@ -26,6 +27,7 @@ function addItemInInventory(e){
     const name =  document.getElementById('medicine-name').value;
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
+    const image_base64 = document.getElementById('medicine-image-base64').src;
     const quantity = document.getElementById('medicine-quantity').value;
     const data = Store.getMedicine();
 
@@ -37,11 +39,11 @@ function addItemInInventory(e){
           ID = 0;
       }
     
-    if (name === '' || medicinetype === '' || quantity ==='') {
+    if (name === '' || medicinetype === '' || quantity === '') {
       alert('Please fill all fields');
     } else {
       //instatiating medicine class
-      const medicine = new Medicine(ID, name,medicinetype,image,quantity);
+      const medicine = new Medicine(ID, name, medicinetype, image, image_base64, quantity);
       Store.addMedicine(medicine);
      
       // passing medicine
