@@ -49,6 +49,10 @@
         <div class="modal-body">
           <div class="medicine-details text-center">
             <ul class="medicine-details-list">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62729fa3c816cccd9cb42af75c3896d46634282a
             </ul>
           </div>
         </div>
@@ -57,6 +61,7 @@
             data-dismiss="modal" aria-label="Close">Update</button>
           <button type="button" id="delete-item" class="btn btn-danger" data-dismiss="modal"
             aria-label="Close">Delete</button>
+<<<<<<< HEAD
         </div>
       </div>
     </div>
@@ -93,6 +98,92 @@
             </div>
             <div class="form-group">
               <img id="medicine-image-base64" src="#" alt="your image" />
+            </div>
+            <div class="form-group">
+              <label for="medicine-quantity">Medicine name</label>
+              <input type="number" class="form-control" id="medicine-quantity" placeholder="Quantity">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="add-item" class="btn btn-success" data-dismiss="modal" aria-label="Close">Add
+            items</button>
+=======
+>>>>>>> 62729fa3c816cccd9cb42af75c3896d46634282a
+        </div>
+      </div>
+    </div>
+  </div>
+<<<<<<< HEAD
+  <!-- Update items modal -->
+  <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="input-modal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-heading">Update items in inventory</h5>
+=======
+  <!-- add Modal -->
+  <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="input-modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-heading">Add items in inventory</h5>
+>>>>>>> 62729fa3c816cccd9cb42af75c3896d46634282a
+          <button type="button" id="back-btn" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+<<<<<<< HEAD
+            <input type="hidden" id="medicine-update-id">
+            <div class="form-group">
+              <label for="medicine-update-name">Medicine name</label>
+              <input type="text" class="form-control" id="medicine-update-name" placeholder="Medicine name">
+            </div>
+            <div class="form-group">
+              <label for="medicine-update-type">Select medicine types</label>
+              <select class="form-control" id="medicine-update-type">
+                <option>Medicine 1</option>
+                <option>Medicine 2</option>
+                <option>Medicine 3</option>
+                <option>Medicine 4</option>
+                <option>Medicine 5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="medicine-update-image">Choose image</label>
+              <input id="medicine-update-image" type="file" multiple="multiple">
+            </div>
+            <div class="form-group">
+              <img id="medicine-update-image-base64" src="#" alt="your image" />
+            </div>
+            <div class="form-group">
+              <label for="medicine-update-quantity">Medicine name</label>
+              <input type="number" class="form-control" id="medicine-update-quantity" placeholder="Quantity">
+            </div>
+=======
+            <div class="form-group">
+              <label for="medicine-name">Medicine name</label>
+              <input type="text" class="form-control" id="medicine-name" placeholder="Medicine name">
+            </div>
+            <div class="form-group">
+              <label for="medicine-type">Select medicine types</label>
+              <select class="form-control" id="medicine-type">
+                <option>Medicine 1</option>
+                <option>Medicine 2</option>
+                <option>Medicine 3</option>
+                <option>Medicine 4</option>
+                <option>Medicine 5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="medicine-image">Choose image</label>
+              <input id="medicine-image" type="file" multiple="multiple">
+            </div>
+            <div class="form-group">
+            <img id="medicine-image-base64" src="#" alt="your image" />
             </div>
             <div class="form-group">
               <label for="medicine-quantity">Medicine name</label>
@@ -140,12 +231,10 @@
               <input id="medicine-update-image" type="file" multiple="multiple">
             </div>
             <div class="form-group">
-              <img id="medicine-update-image-base64" src="#" alt="your image" />
-            </div>
-            <div class="form-group">
               <label for="medicine-update-quantity">Medicine name</label>
               <input type="number" class="form-control" id="medicine-update-quantity" placeholder="Quantity">
             </div>
+>>>>>>> 62729fa3c816cccd9cb42af75c3896d46634282a
           </form>
         </div>
         <div class="modal-footer">
@@ -164,7 +253,31 @@
   <script src="./javascript/app.js"></script>
   <script src="./javascript/UIController.js"></script>
   <script src="./javascript/LocalStorage.js"></script>
+<<<<<<< HEAD
   <script src="./javascript/image.js"></script>
+=======
+  <script type="text/javascript">
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        console.log(input);
+        reader.onload = function (e) {
+          $('#medicine-image-base64').attr('src', e.target.result);
+          console.log(e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#medicine-image").change(function () {
+      console.log(this);
+      readURL(this);
+    });
+  </script>
+
+
+>>>>>>> 62729fa3c816cccd9cb42af75c3896d46634282a
 </body>
 
 </html>

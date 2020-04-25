@@ -36,7 +36,7 @@ function addItemInInventory(e){
           ID = 0;
       }
     
-    if (name === '' || medicinetype === '' || quantity ==='') {
+    if (name === '' || medicinetype === '' || quantity === '') {
       alert('Please fill all fields');
     } else {
       //instatiating medicine class
