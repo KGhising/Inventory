@@ -1,10 +1,11 @@
 //Medicine class defines the properties that we will be using throughout the project
 class Medicine {
-  constructor(ID, name, medicinetype, image, quantity) {
+  constructor(ID, name, medicinetype, image, image_base64, quantity) {
     this.ID = ID;
     this.name = name;
     this.medicinetype = medicinetype;
     this.image = image;
+    this.image_base64 = image_base64;
     this.quantity = quantity;
   }
 }
@@ -19,10 +20,11 @@ document.getElementById("delete-item").addEventListener('click', deleteItem);
 document.addEventListener('DOMContentLoaded', displayList);
 
 // function to add item in storage
-function addItemInInventory(e) {
+function addItemInInventory(e){
     const name =  document.getElementById('medicine-name').value;
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
+    const image_base64 = document.getElementById('medicine-image-base64').src;
     const quantity = document.getElementById('medicine-quantity').value;
     const data = Store.getMedicine();
 
@@ -38,49 +40,58 @@ function addItemInInventory(e) {
       alert('Please fill all fields');
     } else {
       //instatiating medicine class
-      const medicine = new Medicine(ID, name,medicinetype,image,quantity);
+      const medicine = new Medicine(ID, name, medicinetype, image,image_base64, quantity);
       Store.addMedicine(medicine);
      
       // passing medicine
       displayList();
-      // clear input fields
-      UI.clearFields();
+      // clear fields
+      clearFields();
     }
     // Prevent default
     e.preventDefault();
 }
 
+// clear fields
+function clearFields(){
+  document.getElementById('medicine-name').value = '';
+  document.getElementById('medicine-type').value = '';
+  document.getElementById('medicine-image').value = '';
+  document.getElementById('medicine-quantity').value = '';
+  document.getElementById('medicine-image-base64').src='';
+}
+
 // Function to display list items
-function displayList() {
+function displayList(){
   document.getElementById('medicine-list').innerHTML = '';
   UI.displayItemName();
 }
 
 // Function to display list items
-function displayDetails(e) {
+function displayDetails(e){
   UI.displayItemsDetails(e);
 }
 
+
 // Update items
-function updateItemInInventory() {
+function updateItemInInventory(){ 
   const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
   const image = document.getElementById('medicine-update-image').value;
+  const image_base64 = document.getElementById('medicine-update-image-base64').src;
   const quantity = document.getElementById('medicine-update-quantity').value;
-  const medicine = new Medicine(Number(ID), name, medicinetype, image, quantity);
+  const medicine = new Medicine(Number(ID), name, medicinetype, image, image_base64, quantity);
   Store.updateItemStorage(medicine);
-  
-  // load displaylist
+  // display update list
   displayList();
 }
-
-// delete items.
+//delete items.
 function deleteItem (e) {
+
   e.preventDefault();
   const id = e.target.dataset.id;
   Store.removeItemsFromStorage(Number(id));
 
-  // load displaylist
   displayList();
 }

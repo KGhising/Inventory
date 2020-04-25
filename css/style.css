@@ -28,3 +28,16 @@ section{
 #image img{
     width: 200px;
 }
+/* list image and medicine */
+.list-medicine{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.list-image{
+    width: 50px;
+}
+/* input image */
+#medicine-image-base64, #medicine-update-image-base64 {
+    width: 100px;
+}
