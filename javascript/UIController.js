@@ -1,25 +1,6 @@
-//Define the UI variable:
-
-// loadImage('').then((img )=>{
-//     console.log(img)
-// })
-
-// function loadImage(imgUrl) {
-//     return new Promise((relose, reject) => {
-//         let img = new Image();
-//         img.onload = () => {
-//             relose(img);
-//         };
-//         img.onerror= (e)=>{
-//             reject(e);
-//         }
-//         img.src=imgUrl;
-//     });
-// }
 class UI{
 
-    //displayItemName function basically creates a list and display 
-    
+    //displayItemName function basically creates a list and display
     static displayItemName() {
         
        const medicineName = Store.displayMedicineName();
@@ -51,7 +32,6 @@ class UI{
     }
 
     //This function displays the medicine details
-
     static displayItemsDetails(e) {
 
         const medicineName = e.target.firstChild.nodeValue;

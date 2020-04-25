@@ -83,15 +83,18 @@ function updateItemInInventory(){
   const quantity = document.getElementById('medicine-update-quantity').value;
   const medicine = new Medicine(Number(ID), name, medicinetype, image, image_base64, quantity);
   Store.updateItemStorage(medicine);
+
   // display update list
   displayList();
 }
+
 //delete items.
 function deleteItem (e) {
-
   e.preventDefault();
+  
   const id = e.target.dataset.id;
   Store.removeItemsFromStorage(Number(id));
 
+  // display update list
   displayList();
 }
