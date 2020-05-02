@@ -20,13 +20,25 @@ document.getElementById("delete-item").addEventListener('click', deleteItem);
 document.addEventListener('DOMContentLoaded', displayList);
 
 // function to add item in storage
-function addItemInInventory(e){
+//This is the arrow function
+const addItemInInventory = (e) => {
     const name =  document.getElementById('medicine-name').value;
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
-    const image_base64 = document.getElementById('medicine-image-base64').src;
+    const image_base64 = document.getElementById('medicine-image-base64');
+    
+    const reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$");
+    if(!reg(image_based64.src)){
+        alert("This extension cannot be taken");
+    }
+    else
+    return true;
+
     const quantity = document.getElementById('medicine-quantity').value;
     const data = Store.getMedicine();
+
+    
+
 
     let ID;
       //Create ID
@@ -52,8 +64,8 @@ function addItemInInventory(e){
     e.preventDefault();
 }
 
-// clear fields
-function clearFields(){
+// clear fields it is an arrow function
+const clearFields = () => {
   document.getElementById('medicine-name').value = '';
   document.getElementById('medicine-type').value = '';
   document.getElementById('medicine-image').value = '';
@@ -62,19 +74,19 @@ function clearFields(){
 }
 
 // Function to display list items
-function displayList(){
+const displayList= ()=>{
   document.getElementById('medicine-list').innerHTML = '';
   UI.displayItemName();
 }
 
 // Function to display list items
-function displayDetails(e){
+const  displayDetails = (e) => {
   UI.displayItemsDetails(e);
 }
 
 
 // Update items
-function updateItemInInventory(){ 
+const updateItemInInventory =() => { 
   const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
@@ -89,7 +101,7 @@ function updateItemInInventory(){
 }
 
 //delete items.
-function deleteItem (e) {
+const deleteItem = (e) => {
   e.preventDefault();
   
   const id = e.target.dataset.id;
