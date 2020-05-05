@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', displayList);
 
 // function to add item in storage
 //This is the arrow function
-const addItemInInventory = (e) => {
+function addItemInInventory (e){
     const name =  document.getElementById('medicine-name').value;
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
-    const image_base64 = document.getElementById('medicine-image-base64');
+    const image_base64 = document.getElementById('medicine-image-base64').src;
     
-    const reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$");
-    if(!reg(image_based64.src)){
-        alert("This extension cannot be taken");
-    }
-    else
-    return true;
+    // const reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$");
+    // if(!reg(image_based64.src)){
+    //     alert("This extension cannot be taken");
+    // }
+    // else
+    // return true;
 
     const quantity = document.getElementById('medicine-quantity').value;
     const data = Store.getMedicine();
@@ -74,19 +74,19 @@ const clearFields = () => {
 }
 
 // Function to display list items
-const displayList= ()=>{
+function displayList() {
   document.getElementById('medicine-list').innerHTML = '';
   UI.displayItemName();
 }
 
 // Function to display list items
-const  displayDetails = (e) => {
+function displayDetails (e) {
   UI.displayItemsDetails(e);
 }
 
 
 // Update items
-const updateItemInInventory =() => { 
+function updateItemInInventory() { 
   const ID = document.getElementById('medicine-update-id').value;
   const name =  document.getElementById('medicine-update-name').value;
   const medicinetype = document.getElementById('medicine-update-type').value;
@@ -101,7 +101,7 @@ const updateItemInInventory =() => {
 }
 
 //delete items.
-const deleteItem = (e) => {
+function deleteItem(e) {
   e.preventDefault();
   
   const id = e.target.dataset.id;
