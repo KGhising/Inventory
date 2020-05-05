@@ -76,7 +76,7 @@ function addItemInInventory(e){
 
 ```
 
-![screenshot](./imageScreenshots/localstorragedata.png)
+![screenshot](./imageScreenshots/localstorragedata.PNG)
 
 
 
@@ -171,7 +171,7 @@ function updateItemInInventory(){
 }
 ```
 
-![screenshot](./imageScreenshots/medicinedetails.png)
+![screenshot](./imageScreenshots/medicinedetails.PNG)
 
 
 > Now when you want to update the file then you click update.
@@ -210,7 +210,7 @@ function updateItemInInventory(){
 }
 ```
 
-![screenshot](./imageScreenshots/updatedisplay.png)
+![screenshot](./imageScreenshots/updatedisplay.PNG)
 
 > The deleted button removes the content .
 
