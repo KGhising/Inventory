@@ -331,5 +331,14 @@ $("#medicine-update-image").change(function () {
 });
 
 ```
+# May 5/2020
+
+> Added code in image.js to validate the file extension
+code we use
+
+```javascript
+
+/(\.jpg|\.jpeg|\.png|\.gif)$/i
+```
 
 
