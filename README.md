@@ -13,7 +13,7 @@ Flow of the program
 > when you run index.html then initially you will observe the following event happening in your screen
 
 
-![screenshot](./imageScreenshots/display.png)
+![screenshot](./imageScreenshots/display.PNG)
 
 The list Item will later on display the name list of the medicines.
 
@@ -119,7 +119,7 @@ static displayItemName() {
 
 
 
-![screenshot](./imageScreenshots/display.png)
+![screenshot](./imageScreenshots/display.PNG)
 
 
 
