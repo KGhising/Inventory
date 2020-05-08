@@ -1,7 +1,7 @@
 class UI{
 
     //displayItemName function basically creates a list and display
-    static displayItemName() {
+    static displayItemName = () => {
         
        const medicineName = Store.displayMedicineName();
         medicineName.forEach(element => {
@@ -32,7 +32,7 @@ class UI{
     }
 
     //This function displays the medicine details
-    static displayItemsDetails(e) {
+    static displayItemsDetails = (e) => {
 
         const medicineName = e.target.firstChild.nodeValue;
         const items = Store.displayMedicineName();
@@ -58,7 +58,7 @@ class UI{
     }
 
     //This function fills current item in the form to be updated.
-    static fillMedicine(item) {
+    static fillMedicine = (item) => {
         document.getElementById('medicine-update-id').value = `${item.ID}`;
         document.getElementById('medicine-update-name').value = `${item.name}`;
         document.getElementById('medicine-update-type').value = `${item.medicinetype}`;

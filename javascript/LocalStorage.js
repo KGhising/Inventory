@@ -1,7 +1,7 @@
 class Store {
 
     //This function gets medicine array stored in getMedicine
-    static getMedicine(){
+    static getMedicine = () =>{
         let medicines;
         if (localStorage.getItem('medicines') === null) {
             medicines = [];
@@ -12,21 +12,20 @@ class Store {
     }
 
     //This function is used to get the medicineName.
-    static displayMedicineName(){
+    static displayMedicineName = () => {
         const medicines = Store.getMedicine();
         return medicines;
         
     }
     //This function add medicine to localstorage.
-    static addMedicine(medicine){
+    static addMedicine = (medicine) => {
 
         const medicines = Store.getMedicine();  
         medicines.push(medicine);
         localStorage.setItem('medicines', JSON.stringify(medicines)); //JSON.stringify converts the data in object format into string format.
     }
     //This function updates the current medicine details.
-    static updateItemStorage(medicine)
-    {
+    static updateItemStorage = (medicine) => {
         let medicines = Store.getMedicine('medicines');
 
         medicines.forEach(function(med, index){
@@ -39,7 +38,7 @@ class Store {
 
     //This function deletes the data from the local storage
 
-    static removeItemsFromStorage(id){
+    static removeItemsFromStorage = (id) => {
         const medicines = Store.getMedicine();
         medicines.forEach(function(medicine, index){
             
