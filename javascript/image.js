@@ -1,6 +1,5 @@
 // image upload with image validation
-function readURL() {
-
+readURL = () => {
     var fileInput = document.getElementById('medicine-image');
     var filePath = fileInput.value;
     var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
@@ -21,7 +20,7 @@ function readURL() {
 }
 
 // image update with image validation
-function readUpdateURL(input) {
+readUpdateURL = () => {
     var fileInput = document.getElementById('medicine-update-image');
     var filePath = fileInput.value;
     var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
@@ -30,20 +29,20 @@ function readUpdateURL(input) {
         fileInput.value = '';
         return false;
     }else{
-    if (input.files) {
+    if (fileInput.files) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $('#medicine-update-image-base64').attr('src', e.target.result);
         }
-        reader.readAsDataURL(input.files[0]);
+        reader.readAsDataURL(fileInput.files[0]);
     }
 }
 }
 // event listner for upload and update image
-$("#medicine-image").change(function () {
+$("#medicine-image").change(() => {
     readURL(this);
 });
 
-$("#medicine-update-image").change(function () {
+$("#medicine-update-image").change(() => {
     readUpdateURL(this);
 });
