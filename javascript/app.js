@@ -26,14 +26,6 @@ function addItemInInventory (e){
     const medicinetype = document.getElementById('medicine-type').value;
     const image = document.getElementById('medicine-image').value;
     const image_base64 = document.getElementById('medicine-image-base64').src;
-    
-    // const reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$");
-    // if(!reg(image_based64.src)){
-    //     alert("This extension cannot be taken");
-    // }
-    // else
-    // return true;
-
     const quantity = document.getElementById('medicine-quantity').value;
     const data = Store.getMedicine();
 
@@ -65,7 +57,7 @@ function addItemInInventory (e){
 }
 
 // clear fields it is an arrow function
-const clearFields = () => {
+function clearFields() {
   document.getElementById('medicine-name').value = '';
   document.getElementById('medicine-type').value = '';
   document.getElementById('medicine-image').value = '';
